@@ -1,6 +1,7 @@
 import strawberry
+
 from .query import Query
-from .types.playlist import Playlist
+from .mutation import Mutation
 
-schema = strawberry.Schema(query=Query, types=[Playlist])
-
+# Note: strawberry automatically includes types usedy by any resolver
+schema = strawberry.Schema(query=Query, mutation=Mutation)
